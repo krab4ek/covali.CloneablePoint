@@ -18,7 +18,8 @@
 
         public object Clone()
         {
-            return new Point(this.X, this.Y);
+            return this.MemberwiseClone();
+                /*new Point(this.X, this.Y);*/
         }
     }
 }
