@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace covali.CloneablePoint
+﻿namespace covali.CloneablePoint
 {
-    internal class Point
+    internal class Point : ICloneable
     {
         public int X { get; set; }
         public int Y { get; set; }
 
-        public Point (int xPos, int yPos)
+        public Point(int xPos, int yPos)
         {
             X = xPos;
             Y = yPos;
@@ -21,6 +15,10 @@ namespace covali.CloneablePoint
 
         }
         public override string ToString() => $"X={X}; Y={Y}";
-        
+
+        public object Clone()
+        {
+            return new Point(this.X, this.Y);
+        }
     }
 }
