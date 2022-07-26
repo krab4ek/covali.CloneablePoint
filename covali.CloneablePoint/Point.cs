@@ -26,7 +26,13 @@
 
         public object Clone()
         {
-            return this.MemberwiseClone();
+            Point newPoint = (Point)this.MemberwiseClone();
+            PointDescription currentDesc = new PointDescription();
+            currentDesc.PetName = this.desc.PetName;
+            newPoint.desc = currentDesc;
+            return newPoint;
+
+            //return this.MemberwiseClone();
             /*new Point(this.X, this.Y);*/
         }
     }
